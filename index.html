@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Angular Practice</h1>
+
+      <div class="row">
+        <div class="col-md-4" ng-app="myApp" ng-init="name='BoJack Horseman'">
+          <div class="border-me text-overflow height-row-1">
+            <div class="form-group">
+              <h3>Input form update</h3>
+              <input type="text" ng-model="name" placeholder="What is your name?" class="form-control">
+            </div>
+            <h5>My name is:</h5>
+            <p>{{name}}</p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border-me height-row-1">
+            <h4>Angular intpolation</h4>
+            <p>
+              <b>Number evaluation:</b>
+               1 + 2 = {{1 + 2}}
+            </p>
+            <p>
+              <b>String concat: </b>
+              My name is {{"BoJack" + " Horseman"}}
+            </p>
+            <p>
+              <b>Array length eval: </b>
+              The array [99,43,22] is {{ [99,43,22].length }} items long.
+            </p>
+            <p>
+              <b>Number rounding: </b>
+              {{"€" + (3.14159265359 | number:2)}}
+            </p>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="border-me height-row-1">
+            <h3>Angular select</h3>
+            <div class="form-group">
+              <label for="petSelect"> Select what pets you love! </label>
+              <select name="petSelect" ng-model="data.petSelect" class="form-control">
+                <option value="dogs">Dogs</option>
+                <option value="cats">Cats</option>
+                <option value="cats and dogs">Cats and dogs</option>
+                <option value="neither">Neither</option>
+              </select>
+            </div>
+            <h3>I &lt;3 {{data.petSelect}}</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="border-me text-overflow height-row-2">
+              <h3>Angular font modifiers</h3>
+              <div class="form-group">
+                <input type="text" ng-model="message" placeholder="Message" class="form-control">
+              </div>
+              <p>Yelling: "{{message | uppercase}}"</p>
+              <p>Whispering: "<i>{{message | lowercase}}</i>"</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="border-me height-row-2">
+              <h3>Angular style rounding</h3>
+              <p>{{3.14159265359 | number:3}}</p>
+              <p>{{3.14159265359 | number:6}}</p>
+              <p>{{3.14159265359 | number:1}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <div class="border-me height-row-3">
+              <h3>Angular select</h3>
+              <div class="form-group">
+                <label for="piLengthSelect"> Select desired length of pi: </label>
+                <select name="piLengthSelect" ng-model="data.piLengthSelect" class="form-control">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                  <option value="6">6</option>
+                  <option value="7">7</option>
+                </select>
+              </div>
+              <p>{{3.14159265359 | number:data.piLengthSelect}}</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="border-me text-overflow height-row-3">
+              <h3>Tip Calculator</h3>
+              <div class="form-group">
+                <label>How much was your meal?</label>
+                <input type="text" ng-model="cost" placeholder="30" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="percentSelect">How much would you like to tip?</label>
+                <select name="percentSelect" ng-model="data.percentSelect" class="form-control">
+                  <option value=".10">10%</option>
+                  <option value=".15">15%</option>
+                  <option value=".20">20%</option>
+                </select>
+              </div>
+              <p><b>Tip this much: </b>{{data.percentSelect * cost | currency}}</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-12 diff-height">
+          <div class="border-me width text-overflow">
+            <h3>Mad Libs!</h3>
+            <form>
+              <div class="form-group">
+                <label for="girlsName">Girl's name</label>
+                <input type="text" ng-model="girlsName" placeholder="Name" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="adjective">Adjective</label>
+                <input type="text" ng-model="adjective" placeholder="Adjective" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="pluralNounOne">Plural Noun</label>
+                <input type="text" ng-model="pluralNounOne" placeholder="Plural noun" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="pluralInsect">An insect, plural</label>
+                <input type="text" ng-model="pluralInsect" placeholder="An insect, plural" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="pluralNounTwo">Plural Noun</label>
+                <input type="text" ng-model="pluralNounTwo" placeholder="Plural noun" class="form-control">
+              </div>
+              <div class="form-group">
+                <label for="verb">Verb ending in "s"</label>
+                <input type="text" ng-model="verb" placeholder="Verb" class="form-control">
+              </div>
+              <div class="form-group">
+                <button type="submit" ng-click="show=true" class="btn btn-success">Generate</button>
+              </div>
+            </form>
+            <div ng-show="show" class="border-top">
+              <button type="submit" ng-click="show=false; girlsName=''; adjective=''; pluralNounOne=''; pluralInsect=''; pluralNounTwo=''; verb=''" id="" class="btn btn-default margin-bottom">
+                Play again?
+              </button>
+              <p>I think {{girlsName}} is {{adjective}}!</p>
+              <p>She likes to eat {{pluralNounOne}} with a side of {{pluralInsect}}.</p>
+              <p>In her free time she checks out {{pluralNounTwo}}.</p>
+              <p>Sometimes she {{verb}} outside with a bucket.</p>
+              <p></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!-- {{3.14159265359 | currency}} -->
+   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.4/angular.min.js"></script>
+    <script>
+      angular.module('myApp', []);
+      
+    </script>
+  </body>
+</html>

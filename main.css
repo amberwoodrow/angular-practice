@@ -1,0 +1,45 @@
+.border-me {
+  border: solid 1px #ccc;
+  text-align: center;
+  margin: 10px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.height-row-1 {
+  height: 210px;
+}
+
+.height-row-2 {
+  height: 190px;
+}
+
+.height-row-3 {
+  height: 250px;
+}
+
+.container {
+  text-align: center;
+}
+
+.text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.width {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 30px;
+}
+
+.border-top {
+  border-top: solid 1px #ccc;
+  margin-top: 10px;
+  padding-top: 10px;
+}
+
+.margin-bottom {
+  margin-bottom: 10px;
+}
